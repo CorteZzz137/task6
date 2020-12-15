@@ -9,10 +9,6 @@
 
 using namespace std;
 
-bool comp1(pair<float, pair<int, int> >& a, pair<float, pair<int, int> >& b) {
-	return a.first < b.first;
-}
-
 void task6_1(string filename1, string filename2) {
 	ifstream fin(filename1);
 	ofstream fout(filename2);
@@ -27,7 +23,7 @@ void task6_1(string filename1, string filename2) {
 
 	}
 	fin.close();
-	sort(a.begin(), a.end(), comp1);
+	sort(a.begin(), a.end());
 	for (auto& i : a) {
 		fout << i.second.first << " " << i.second.second << endl;
 	}
